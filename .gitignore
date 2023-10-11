@@ -1,0 +1,4 @@
+
+# ignor all the node_modules
+node_modules
+.history

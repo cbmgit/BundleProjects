@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+</head>
+<body>
+    <!-- Include the bundled JavaScript file -->
+    <script src="dist/lua-fmt.js"></script>
+
+  
+
+     <!-- Display the result -->
+     <textarea id="input" rows="15" cols="20">
+        Rect={area=0,length=0,breadth=0}function Rect:new(a,b,c)a=a or{}setmetatable(a,self)self.__index=self;self.length=b or 0;self.breadth=c or 0;self.area=b*c;return a end;function Rect:printRect()print("The calculated Area of Rect:  ",self.area)end
+
+     </textarea>
+  <!-- Button to trigger the doubleArray function -->
+  <button onclick="beautifyLuaFmt()">LUA Beautifier</button>
+    <!-- Display the result -->
+    <textarea id="result" rows="15" cols="20"></textarea>
+
+<!-- ... (previous HTML content) -->
+
+<script>
+    function beautifyLuaFmt() {
+
+        let input = document.getElementById("input").value;
+
+        //Lib function  beautifyLuaCode()
+        let result =beautifyLuaCode(input) ;
+        console.log(result);
+        document.getElementById("result").value = result ;
+    }
+    beautifyLuaFmt();
+</script>
+
+</body>
+</html>
