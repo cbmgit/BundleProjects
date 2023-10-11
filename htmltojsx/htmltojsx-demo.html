@@ -1,0 +1,49 @@
+<!-- Copy from luafmt--><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My App</title>
+    </head>
+    <body>
+        <!-- Include the bundled JavaScript file -->
+        <script src="dist/htmltojsxlib.js"></script>
+    
+      
+    
+         <!-- Display the result -->
+         <textarea id="input" rows="15" cols="20">
+            <!-- Hello world -->
+
+    
+         </textarea>
+      <button onclick="convertHTMLtoJSX()">HTML to JSX</button>
+        <!-- Display the result -->
+        <textarea id="result" rows="15" cols="20"></textarea>
+    
+    <!-- ... (previous HTML content) -->
+    
+    <script>
+        const htmlCode = `
+<!-- Hello world -->
+<div class="awesome" style="border: 1px solid red">
+  <label for="name">Enter your name: </label>
+  <input type="text" id="name" />
+</div>
+<p>Enter your HTML here</p>
+`;
+        function convertHTMLtoJSX() {
+    
+            let input = document.getElementById("input").value;
+    
+            //Lib function  libConvertHTMLTOJSX()
+            let result =libConvertHTMLTOJSX(input) ;
+            console.log(result);
+            document.getElementById("result").value = result ;
+        }
+        convertHTMLtoJSX();
+    </script>
+    
+    </body>
+    </html>
+    
