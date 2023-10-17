@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+</head>
+<body>
+    <!-- Include the bundled JavaScript file -->
+    <script src="dist/toml-lib.js"></script>
+
+  
+
+     <!-- Display the result -->
+     <textarea id="input" rows="15" cols="20">
+        global = "this is a string"
+# This is a comment of a table
+[my_table]
+key = 1 # Comment a key
+value = true
+list = [4, 5, 6]
+
+     </textarea>
+  <!-- Button to trigger the doubleArray function -->
+  <button onclick="validateTOML()">Toml Validator</button>
+  <button onclick="beautifyTOML()">Toml Beautify</button>
+    <!-- Display the result -->
+    <textarea id="result" rows="15" cols="20"></textarea>
+
+<!-- ... (previous HTML content) -->
+
+<script>
+    function validateTOML() {
+
+        try{
+
+        let input = document.getElementById("input").value;
+
+        let result =parseTOML(input) ;
+
+
+        console.log(result);
+        document.getElementById("result").value = result ;
+        }catch(e){
+            document.getElementById("result").value = e.message ;
+        }
+
+    }
+
+    function beautifyTOML(){
+        let input = document.getElementById("input").value;
+
+        let result =tomlStringify(input) ;
+        console.log(result);
+        document.getElementById("result").value = result ;
+    }
+
+    validateTOML();
+</script>
+
+</body>
+</html>
